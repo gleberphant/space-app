@@ -30,7 +30,9 @@ export default function Galeria() {
                 <SecaoFluida>
                     <Titulo>Navegue pela Galeria</Titulo>
                     <ImagensContainer>
-                        {}
+                        {fotosJson.map(
+                            (foto) => <Imagem imagem={foto}></Imagem>
+                        )}
                     </ImagensContainer>
                 </SecaoFluida>
                 <Populares></Populares>
