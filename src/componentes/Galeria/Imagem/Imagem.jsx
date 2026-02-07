@@ -8,11 +8,11 @@ const Rodape = styled.footer`
 
 export default function Imagem({ imagem }) {
     return (
-        <figure>
+        <div>
             <p>{imagem.id} {imagem.titulo}</p>
             <img src={imagem.path}></img>
             <Rodape>{imagem.fonte}</Rodape>
-        </figure>
+        </div>
     )
 
 }
