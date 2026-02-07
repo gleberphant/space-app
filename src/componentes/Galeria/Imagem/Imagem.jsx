@@ -1,4 +1,5 @@
 import styled from "styled-components"
+
 const Rodape = styled.footer`
     display: flex;
     justify-content: space-between;
@@ -10,7 +11,7 @@ export default function Imagem({ imagem }) {
         <div>
             <p>{imagem.id} {imagem.titulo}</p>
             <img src={imagem.path}></img>
-            <p>{imagem.fonte}</p>
+            <Rodape>{imagem.fonte}</Rodape>
         </div>
     )
 
