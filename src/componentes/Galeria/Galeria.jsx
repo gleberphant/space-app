@@ -2,6 +2,7 @@ import styled from "styled-components"
 import Tags from "./Tags/Tags"
 import Populares from "./Populares/Populares"
 import Titulo from "../Titulo/Titulo"
+import Imagem from "./Imagem/Imagem"
 
 import fotosJson from "../../arquivos-json/fotos.json"
 
