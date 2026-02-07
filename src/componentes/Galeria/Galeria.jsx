@@ -3,6 +3,7 @@ import Tags from "./Tags/Tags"
 import Populares from "./Populares/Populares"
 import Titulo from "../Titulo/Titulo"
 
+import fotosJson from "../../arquivos-json/fotos.json"
 
 const GaleriaContainer = styled.div`
     display: flex;
@@ -28,7 +29,9 @@ export default function Galeria() {
             <GaleriaContainer>
                 <SecaoFluida>
                     <Titulo>Navegue pela Galeria</Titulo>
-                    <ImagensContainer></ImagensContainer>
+                    <ImagensContainer>
+                        {}
+                    </ImagensContainer>
                 </SecaoFluida>
                 <Populares></Populares>
             </GaleriaContainer>
