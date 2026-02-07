@@ -14,9 +14,12 @@ const IMGEstilizado = styled.img`
 
 export default function Cabecalho(){
     return(
+        <>
         <HeaderEstilizado>
         <IMGEstilizado src="/imagens/logo.png"/>
         <CampoTexto> Buscar </CampoTexto>
         </HeaderEstilizado>
+        
+        </>
     )
 }

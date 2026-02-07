@@ -1,6 +1,7 @@
 import {styled} from "styled-components"
 import ItemNavegacao from "./ItemNavegacao/ItemNavegacao"
-    const ULEstilizado = styled.ul`
+ 
+ const ULEstilizado = styled.ul`
             list-style: none;
             padding: 0;
             margin: 0;
