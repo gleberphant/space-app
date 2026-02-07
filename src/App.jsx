@@ -1,46 +1,48 @@
-import { createGlobalStyle, styled } from "styled-components"
+import { styled } from "styled-components"
 
 import BarraLateral from "./componentes/BarraLateral/BarraLateral"
 import Cabecalho from "./componentes/Cabecalho/Cabecalho"
 import Banner from "./componentes/Banner/Banner"
-
+import Galeria from "./componentes/Galeria/Galeria"
 import backgroundImage from './assets/banner.png'
-import GandhiSansRegular from './assets/fontes/GandhiSans-Regular.otf'
-import GandhiSansBold from './assets/fontes/GandhiSans-Bold.otf'
 
-import 'normalize.css'
 
-const EstiloGlobal = createGlobalStyle`
-      @font-face {
-          font-family: 'GandhiSansRegular';
-          src:  url(${GandhiSansRegular});
-      }
-      @font-face {
-          font-family: 'GandhiSansBold';
-          src:  url(${GandhiSansBold});
-      }
+import './normalize.css'
+import './App.css'
+
+
+const ConteinerApp = styled.div`
+    width: 1440px;
+    margin: 0 auto;
+    max-width: 100%;
+  
+`
+const ConteinerMain = styled.main`
+    display:flex;
+    gap:24px;
 `
 
-const FundoGradiente = styled.div`
+const ConteinerGaleria = styled.section`
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+`
 
 
-      background: linear-gradient(180deg, #041833, #00244f, #154580);
-      width:100%;
-      min-height:100vh;
-      `
-function App() {
 
-
+export default function App() {
   return (
     <>
-      <EstiloGlobal />
-      <FundoGradiente>
+      <ConteinerApp>
         <Cabecalho />
-        <BarraLateral />
-        <Banner texto='Bem-Vindo' backgroundImage={backgroundImage} />
-      </FundoGradiente>
+        <ConteinerMain>
+          <BarraLateral />
+          <ConteinerGaleria>
+            <Banner texto='A maior galeria do espaço' backgroundImage={backgroundImage} />
+            <Galeria />
+          </ConteinerGaleria>
+        </ConteinerMain>
+      </ConteinerApp>
     </>
   )
 }
-
-export default App
