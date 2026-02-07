@@ -14,8 +14,10 @@ export default function BarraLateral() {
             <nav>
                 <ULEstilizado>
                     <ItemNavegacao icone="/icones/home" ativo={true}>Home </ItemNavegacao>
-                    <ItemNavegacao icone="/icones/mais-vistas" ativo={false}>Link 1</ItemNavegacao>
-                    <ItemNavegacao icone="/icones/mais-curtidas" ativo={false}>Link 2</ItemNavegacao>
+                    <ItemNavegacao icone="/icones/mais-vistas" ativo={false}>Mais Vistas</ItemNavegacao>
+                    <ItemNavegacao icone="/icones/mais-curtidas" ativo={false}>Mais Curtidas</ItemNavegacao>
+                    <ItemNavegacao icone="/icones/novas" ativo={false}>Novas</ItemNavegacao>
+                    <ItemNavegacao icone="/icones/surpreenda-me" ativo={false}>Surpreenda-me</ItemNavegacao>
                 </ULEstilizado>
             </nav>
         </aside>
