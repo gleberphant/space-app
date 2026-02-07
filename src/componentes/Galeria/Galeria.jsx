@@ -32,7 +32,7 @@ export default function Galeria() {
                     <Titulo>Navegue pela Galeria</Titulo>
                     <ImagensContainer>
                         {fotosJson.map(
-                            (foto) => <Imagem imagem={foto}></Imagem>
+                            (foto) => <Imagem key {foto.id} imagem={foto}></Imagem>
                         )}
                     </ImagensContainer>
                 </SecaoFluida>
