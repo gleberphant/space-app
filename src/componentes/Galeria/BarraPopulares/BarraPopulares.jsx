@@ -1,30 +1,13 @@
 
-import styled from "styled-components"
+import {
+    ColunaFotos,
+    Imagem,
+    Botao
+} from './BarraPopulares.styled'
+
 import Titulo from "../../Titulo/Titulo"
 import { useState } from "react"
 
-const ColunaFotos = styled.section`
-    display:flex;
-    flex-direction:column;
-    gap:16px;
-`
-
-const Imagem = styled.img`
-    max-width: 112px;
-    border-radius: 20px;
-`
-const Botao = styled.button`
-    background-color: transparent;
-    color: #fff;
-    border: 2px solid;
-    border-color: #C98CF1;
-    padding: 12px 20px;
-    font-size: 20px;
-    border-radius: 10px;
-    cursor: pointer;
-    width: 100%;
-    margin-top: 16px;
-`
 
 
 export default function BarraPopulares({ fotosFavoritas = [] }) {

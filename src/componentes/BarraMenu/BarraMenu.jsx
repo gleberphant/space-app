@@ -1,4 +1,4 @@
-import {styled} from "styled-components"
+import {ULEstilizado} from  './BarraMenu.styled'
 import ItemNavegacao from "./ItemNavegacao/ItemNavegacao"
 
 
@@ -14,13 +14,6 @@ import iconeMaisCurtidasInativo from '../../assets/icones/mais-curtidas-inativo.
 import iconeNovasInativo from '../../assets/icones/novas-inativo.png'
 import iconeSurpreendaMeInativo from '../../assets/icones/surpreenda-me-inativo.png'
 
-
- const ULEstilizado = styled.ul`
-            list-style: none;
-            padding: 0;
-            margin: 0;
-            width: 212px;
-    `
 
 export default function BarraMenu() {
     const itens = [
