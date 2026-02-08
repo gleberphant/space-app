@@ -1,15 +1,16 @@
 /* g:\React-projects\react-static\space-app\src\App.css */
 @font-face {
     font-family: 'GandhiSansRegular';
-    src: url('./assets/fontes/GandhiSans-Regular.otf');
+    src: local('./assets/fontes/GandhiSans-Regular.otf'), local('./assets/fontes/GandhiSans-Regular.otf'), url('./assets/fontes/GandhiSans-Regular.otf');
 }
 
 @font-face {
     font-family: 'GandhiSansBold';
-    src: url('./assets/fontes/GandhiSans-Bold.otf');
+    src: local('./assets/fontes/GandhiSans-Bold.otf'), local('./assets/fontes/GandhiSans-Bold.otf'), url('./assets/fontes/GandhiSans-Bold.otf');
 }
 
 body {
+    font-family: 'GandhiSansRegular', sans-serif;
     background: linear-gradient(180deg, #041833, #00244f, #154580);
     min-height: 100vh;
 }
