@@ -13,7 +13,7 @@ export default function Imagem({ imagem, expandida = false, darZoom, favoritar }
 
     return (
         <Figure $expandida={expandida}>
-            <img src={imagem.path} alt={imagem.alt} onClick={() => { expandida ? false : darZoom(imagem) }} />
+            <img src={`.${imagem.path}`} alt={imagem.alt} onClick={() => { expandida ? false : darZoom(imagem) }} />
             <figcaption>
                 <Div>
                     <h3>{imagem.id} {imagem.titulo}</h3>
