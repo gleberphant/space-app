@@ -8,12 +8,12 @@ import imgLogo from '../../assets/logo.png'
 
 
 
-export default function Cabecalho() {
+export default function Cabecalho({buscar}) {
     return (
         <>
             <HeaderEstilizado>
                 <IMGEstilizado src={imgLogo} />
-                <CampoTexto> Buscar </CampoTexto>
+                <CampoTexto buscar={buscar}> Buscar </CampoTexto>
             </HeaderEstilizado>
 
         </>

@@ -9,58 +9,59 @@ import Cabecalho from "./componentes/Cabecalho/Cabecalho"
 import Banner from "./componentes/Banner/Banner"
 import Galeria from "./componentes/Galeria/Galeria"
 import backgroundImage from './assets/banner.png'
-import fotosJson from "./arquivos-json/fotos.json"
 import ModalZoom from "./componentes/ModalZoom/ModalZoom"
 import Rodape from "./componentes/Rodape/Rodape"
 
-import { useState } from "react"
+import jsonFotos from "./dados/fotos.json"
+import jsonTags from "./dados/tags.json"
+
+import { useEffect, useMemo, useState } from "react"
 
 
 export default function App() {
 
-  const [fotos, setFotos] = useState(fotosJson)
+  const [listaFotos, setListaFotos] = useState(jsonFotos)
   const [fotoSelecionada, setFotoSelecionada] = useState(null)
 
+  const [busca, setBusca] = useState('')
+  const [filtro, setFiltro] = useState(0)
 
-  const filtrarTag = (tagId) => {
+ 
 
-    console.log(tagId)
-
-    if (tagId === 0) setFotos(fotosJson)
-    else setFotos(fotosJson.filter(
-      (foto) => foto.tagId === tagId
-    ))
+  const favoritar = (favoritoId) => {
+    const listaTemp = listaFotos.map((foto) => foto.id === favoritoId ? { ...foto, favorito: !foto.favorito } : foto)
+    setListaFotos(listaTemp)
 
   }
 
-  const favoritar = (favoritoId) => {
-
-
-    const temp = fotos.map(
-      (foto) => {
-        if (foto.id === favoritoId) foto.favorito = foto.favorito ? false : true
-        return foto
-      }
+  const listaFiltrada = useMemo(() => {
+    return listaFotos.filter((foto) =>
+      foto.titulo.toLowerCase().includes(busca.toLocaleLowerCase()) && (filtro === 0 || foto.tagId === filtro)
     )
+  }, [busca, filtro, listaFotos])
 
-    setFotos(temp)
 
+  const abrirModal = (target) => {
+    setFotoSelecionada(target)
+  }
+  const fecharModal = () => {
+    setFotoSelecionada(null)
   }
 
   return (
     <>
       <ConteinerApp>
-        <Cabecalho />
+        <Cabecalho buscar={setBusca} />
         <ConteinerMain>
           <BarraMenu />
           <ConteinerGaleria>
             <Banner texto='A maior galeria do espaço' backgroundImage={backgroundImage} />
-            <Galeria fotos={fotos} darZoom={(foto) => setFotoSelecionada(foto)} favoritar={favoritar} filtrarTag={filtrarTag} />
+            <Galeria listaFotos={listaFiltrada} listaTags={jsonTags} darZoom={abrirModal} favoritar={favoritar} selecionarTag={setFiltro} />
           </ConteinerGaleria>
         </ConteinerMain>
         <Rodape />
       </ConteinerApp>
-      <ModalZoom foto={fotoSelecionada} fechar={() => setFotoSelecionada(null)} favoritar={favoritar} />
+      <ModalZoom foto={fotoSelecionada} fechar={fecharModal} favoritar={favoritar} />
     </>
   )
 }

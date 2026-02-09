@@ -5,13 +5,11 @@ import {
     Div
 } from './Tags.styled'
 
-import tagsJson from '../../../arquivos-json/tags.json'
-
-export default function Tags({ filtrarTag }) {
+export default function Tags({ listaTags, selecionarTag }) {
     return (
         <TagsContainer>
             <Titulo>Filtre por TAG</Titulo>
-            <Div> {tagsJson.map((tag) => <Tag key={tag.id} onClick={() => filtrarTag(tag.id)}>  {tag.titulo} </Tag>)}</Div>
+            <Div> {listaTags.map((tag) => <Tag key={tag.id} onClick={() => selecionarTag(tag.id)}>  {tag.titulo} </Tag>)}</Div>
         </TagsContainer>
     )
 }

@@ -6,10 +6,10 @@ import {
 import searchIcon from "../../assets/search.png"
 
 
-export default function CampoTexto() {
+export default function CampoTexto({buscar}) {
     return (
         <DivEstilizado>
-            <InputEstilizado />
+            <InputEstilizado onChange={(e)=> buscar(e.target.value)}/>
             <ImgEstilizado src={searchIcon} />
         </DivEstilizado>
 

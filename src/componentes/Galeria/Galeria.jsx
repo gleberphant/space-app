@@ -11,18 +11,18 @@ import Titulo from "../Titulo/Titulo"
 import Imagem from "./Imagem/Imagem"
 
 
-export default function Galeria({ fotos = [], darZoom, favoritar, filtrarTag }) {
+export default function Galeria({ listaFotos = [], listaTags = [], darZoom, favoritar, selecionarTag }) {
 
-    const fotosFavoritas = fotos.filter((foto) => foto.favorito === true)
+    const fotosFavoritas = listaFotos.filter((foto) => foto.favorito === true)
 
     return (
         <>
-            <Tags filtrarTag={filtrarTag} />
+            <Tags listaTags={listaTags} selecionarTag={selecionarTag} />
             <GaleriaContainer>
                 <SecaoFluida>
                     <Titulo>Navegue pela Galeria</Titulo>
                     <ImagensContainer>
-                        {fotos.map(
+                        {listaFotos.map(
                             (foto) => <Imagem key={foto.id} imagem={foto} darZoom={darZoom} favoritar={favoritar}></Imagem>
                         )}
                     </ImagensContainer>
